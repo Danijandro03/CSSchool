@@ -1,3 +1,5 @@
+using SchoolType;
+
 namespace Coreschool.Entities
 {
     class School
@@ -12,19 +14,25 @@ namespace Coreschool.Entities
 
         }
 
-        public int Year{ get; set; }
+        public int Year { get; set; }
         public string Country { get; set; }
 
         public string City { get; set; }
-        public int SchoolType;
+        public SchoolTypes SchoolType;
 
         //public School(string intoname, int intoyear)
         //{
-            //this.name = intoname;
-            //Year = intoyear;
+        //this.name = intoname;
+        //Year = intoyear;
         //}
 
-        public School (string name, int year) => (Name, Year) = (name, year);
+        public School(string name, int year) => (Name, Year) = (name, year);
+
+        //Llevar infromación de objeto cuando se declare en  Console.WriteLine
+        public override string ToString()
+        {
+            return $"Name: {Name}, Type: {SchoolType} \n Country: {Country}, City: {City}";
+        }
     }
 
 
