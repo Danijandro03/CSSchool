@@ -28,10 +28,22 @@ namespace Coreschool.Entities
 
         public School(string name, int year) => (Name, Year) = (name, year);
 
+        //asigna country y ciudad vacio, lo que no hace necesario que se le ingrese al llamar al metodo
+        //Se llama firma a el valor que devuelve, valor que recibe y nombre
+        public School(string name, int year, SchoolTypes type, string country = "", string city = "")
+        {
+            //asignación de tuplas
+            (Name, Year) = (name, year);
+            Country = country;
+            this.City = city;
+        }
+
         //Llevar infromación de objeto cuando se declare en  Console.WriteLine
         public override string ToString()
         {
-            return $"Name: {Name}, Type: {SchoolType} \n Country: {Country}, City: {City}";
+            // Se agrega \ para ingresar comilla
+            // System.Environment.NewLine: Salto de linea en todos los sistemas operativos
+            return $"Name: \"{Name}\", Type: {SchoolType} {System.Environment.NewLine} Country: {Country}, City: {City}";
         }
     }
 
