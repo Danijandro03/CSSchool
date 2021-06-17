@@ -45,6 +45,8 @@ namespace Coreschool.Entities
             // System.Environment.NewLine: Salto de linea en todos los sistemas operativos
             return $"Name: \"{Name}\", Type: {SchoolType} {System.Environment.NewLine}, Country: {Country}, City: {City}";
         }
+
+        public Course[] Courses {get; set;}
     }
 
 

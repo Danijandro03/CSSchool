@@ -1,6 +1,7 @@
 ﻿using System;
 using Coreschool.Entities;
 using SchoolType;
+using static System.Console;
 
 namespace Etapa1
 {
@@ -10,38 +11,48 @@ namespace Etapa1
         {
             var School = new School("San Bartolome", 1604);
 
-            //declarar arreglo del tipo Course con 3 posiciones
-
-            var arCourse = new Course[3];
-
-            //Creo y asigno FirstCourse a posición 0
-            arCourse[0] = new Course()
+            //declarar arreglo del tipo Course con 3 posiciones y asignando de una vez valores
+            var arCourse = new Course[3]
             {
+                new Course(){
                 Name = "FirstCourse"
-            };
-            //Creo SecondCourse
-            var curso1 = new Course()
-            {
+                },
+                new Course(){
                 Name = "SecondCourse"
-            };
-            //Asigno SecondCourse a la posición 1
-            arCourse[1] = curso1;
-
-            arCourse[2] = new Course
-            {
+                },      
+                new Course(){
                 Name = "ThirdCourse"
+                }
             };
+
+            //Otra opción para crear arreglo
+            Course[] arCourse1 = {
+                new Course(){Name = "FirstCourse"},
+                new Course(){Name = "SecondCourse"},      
+                new Course(){Name = "ThirdCourse"}
+            };
+
+            //crear arreglo invocando atributo de School
+
+            School.Courses = new Course[]{
+                new Course(){Name = "FirstCourse"},
+                new Course(){Name = "SecondCourse"},      
+                new Course(){Name = "ThirdCourse"}
+            };
+            School = null;
+            printCourseSchool(School);
+
+        
             //Imprimir en consola:
             Console.WriteLine(School);
             System.Console.WriteLine("==============================");
             PrintCourseWhile(arCourse);
             System.Console.WriteLine("==============================");
-            PrintCourseDoWhile (arCourse);
+            PrintCourseDoWhile(arCourse);
             System.Console.WriteLine("==============================");
             PrintCourseFor(arCourse);
             System.Console.WriteLine("==============================");
             PrintCourseForEach(arCourse);
-
             // {
             //     
             //     //declaro objeto con segundo constructor
@@ -52,9 +63,23 @@ namespace Etapa1
             //     School.SchoolType = SchoolTypes.Primaria;
             //     Console.WriteLine(School);
             // }
+        }        
+        private static void printCourseSchool(School school)
+        {
+            Console.WriteLine("=================================");
+            Console.WriteLine("Course of School");
+            Console.WriteLine("=================================");
+            if(school.Courses == null)
+            return;
+            else{
 
+                foreach (var Course in school.Courses){
+                Console.WriteLine($"Nombre {Course.Name}, id {Course.ID}");
+                }
+
+            }
+            
         }
-
         private static void PrintCourseWhile(Course[] arCourse)
         {
             int count = 0;
@@ -67,8 +92,7 @@ namespace Etapa1
         private static void PrintCourseDoWhile(Course[] arCourse)
         {
             int count = 0;
-            do
-            {
+            do{
                 Console.WriteLine($"Nombre {arCourse[count].Name}, id {arCourse[count].ID}");
                 count++;
             }
