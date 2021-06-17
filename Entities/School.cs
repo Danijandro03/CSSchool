@@ -43,7 +43,7 @@ namespace Coreschool.Entities
         {
             // Se agrega \ para ingresar comilla
             // System.Environment.NewLine: Salto de linea en todos los sistemas operativos
-            return $"Name: \"{Name}\", Type: {SchoolType} {System.Environment.NewLine} Country: {Country}, City: {City}";
+            return $"Name: \"{Name}\", Type: {SchoolType} {System.Environment.NewLine}, Country: {Country}, City: {City}";
         }
     }
 
