@@ -20,7 +20,7 @@ namespace Etapa1
                 },
                 new Course(){
                 Name = "SecondCourse"
-                },      
+                },
                 new Course(){
                 Name = "ThirdCourse"
                 }
@@ -29,7 +29,7 @@ namespace Etapa1
             //Otra opción para crear arreglo
             Course[] arCourse1 = {
                 new Course(){Name = "FirstCourse"},
-                new Course(){Name = "SecondCourse"},      
+                new Course(){Name = "SecondCourse"},
                 new Course(){Name = "ThirdCourse"}
             };
 
@@ -37,17 +37,17 @@ namespace Etapa1
 
             School.Courses = new List<Course>(){
                 new Course(){Name = "101",CourseTime = SchedulesType.mañana},
-                new Course(){Name = "201",CourseTime = SchedulesType.mañana},      
+                new Course(){Name = "201",CourseTime = SchedulesType.mañana},
                 new Course(){Name = "301",CourseTime = SchedulesType.mañana}
             };
             //Agrego cursos a la lista(Objeto que se deja enumerar)
-            School.Courses.Add( new Course(){Name ="102", CourseTime = SchedulesType.tarde});
-            School.Courses.Add( new Course(){Name ="202", CourseTime = SchedulesType.tarde});
+            School.Courses.Add(new Course() { Name = "102", CourseTime = SchedulesType.tarde });
+            School.Courses.Add(new Course() { Name = "202", CourseTime = SchedulesType.tarde });
             //
-            
+
             var otCollect = new List<Course>(){
                 new Course(){Name = "401",CourseTime = SchedulesType.mañana},
-                new Course(){Name = "501",CourseTime = SchedulesType.mañana},      
+                new Course(){Name = "501",CourseTime = SchedulesType.mañana},
                 new Course(){Name = "502",CourseTime = SchedulesType.tarde}
             };
 
@@ -57,31 +57,37 @@ namespace Etapa1
 
             //a la colección de cursos school.course agrego los cursos de la variable otcollect
             School.Courses.AddRange(otCollect);
-
-            
-
-            //crear arreglo invocando atributo de School, Asigno lista a asignación de datos en declaración de Courses dentro de School
-        
-
-/*             School.Courses = new Course[]{
-                new Course(){Name = "FirstCourse"},
-                new Course(){Name = "SecondCourse"},      
-                new Course(){Name = "ThirdCourse"}
-            }; */
-            //School = null;
+            //Crea curso solo, suelto
+            //Course tmp = new Course{Name = "101-Vacaional", CourseTime = SchedulesType.noche};
+            //Agrego curso tmp a School.Courses
+            //School.Courses.Add(tmp);
+            printCourseSchool(School);
+            //WriteLine("Curso tmp.Hash " + tmp.GetHashCode());
+            Predicate<Course> MyAlg = Predicate;
+            School.Courses.RemoveAll(Predicate);
+            //School.Courses.Remove(tmp);
+            WriteLine("========Remove=========");
             printCourseSchool(School);
 
-        
+            //crear arreglo invocando atributo de School, Asigno lista a asignación de datos en declaración de Courses dentro de School
+
+
+            /*             School.Courses = new Course[]{
+                            new Course(){Name = "FirstCourse"},
+                            new Course(){Name = "SecondCourse"},      
+                            new Course(){Name = "ThirdCourse"}
+                        }; */
+            //School = null;        
             //Imprimir en consola:
-   /*          Console.WriteLine(School);
-/*             System.Console.WriteLine("==============================");
-            PrintCourseWhile(arCourse);
-            System.Console.WriteLine("==============================");
-            PrintCourseDoWhile(arCourse);
-            System.Console.WriteLine("==============================");
-            PrintCourseFor(arCourse);
-            System.Console.WriteLine("==============================");
-            PrintCourseForEach(arCourse); */
+            /*          
+         /*             System.Console.WriteLine("==============================");
+                     PrintCourseWhile(arCourse);
+                     System.Console.WriteLine("==============================");
+                     PrintCourseDoWhile(arCourse);
+                     System.Console.WriteLine("==============================");
+                     PrintCourseFor(arCourse);
+                     System.Console.WriteLine("==============================");
+                     PrintCourseForEach(arCourse); */
             // {
             //     
             //     //declaro objeto con segundo constructor
@@ -92,22 +98,30 @@ namespace Etapa1
             //     School.SchoolType = SchoolTypes.Primaria;
             //     Console.WriteLine(School);
             // }
-        }        
+        }
+
+        private static bool Predicate(Course courobj)
+        {
+            return courobj.Name == "301";
+        }
+
         private static void printCourseSchool(School school)
         {
             Console.WriteLine("=================================");
             Console.WriteLine("Course of School");
             Console.WriteLine("=================================");
-            if(school.Courses == null)
-            return;
-            else{
+            if (school.Courses == null)
+                return;
+            else
+            {
 
-                foreach (var Course in school.Courses){
-                Console.WriteLine($"Nombre {Course.Name}, id {Course.ID}");
+                foreach (var Course in school.Courses)
+                {
+                    Console.WriteLine($"Nombre {Course.Name}, id {Course.ID}");
                 }
 
             }
-            
+
         }
         /* private static void PrintCourseWhile(Course[] arCourse)
         {
@@ -143,5 +157,5 @@ namespace Etapa1
                 Console.WriteLine($"Nombre {Course.Name}, id {Course.ID}");
             }
         }*/
-    } 
+    }
 }
