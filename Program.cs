@@ -56,17 +56,21 @@ namespace Etapa1
 
 
             //a la colección de cursos school.course agrego los cursos de la variable otcollect
-            School.Courses.AddRange(otCollect);
+/*             School.Courses.AddRange(otCollect);
             //Crea curso solo, suelto
             //Course tmp = new Course{Name = "101-Vacaional", CourseTime = SchedulesType.noche};
             //Agrego curso tmp a School.Courses
             //School.Courses.Add(tmp);
             printCourseSchool(School);
             //WriteLine("Curso tmp.Hash " + tmp.GetHashCode());
-            Predicate<Course> MyAlg = Predicate;
-            School.Courses.RemoveAll(Predicate);
+            School.Courses.RemoveAll(delegate(Course cur)
+            {
+                return cur.Name == "301";
+            } );
+            School.Courses.RemoveAll((cur) => cur.Name == "501" && cur.CourseTime == SchedulesType.mañana);
+
             //School.Courses.Remove(tmp);
-            WriteLine("========Remove=========");
+            WriteLine("========Remove========="); */
             printCourseSchool(School);
 
             //crear arreglo invocando atributo de School, Asigno lista a asignación de datos en declaración de Courses dentro de School
@@ -104,7 +108,7 @@ namespace Etapa1
         {
             return courobj.Name == "301";
         }
-
+        
         private static void printCourseSchool(School school)
         {
             Console.WriteLine("=================================");
