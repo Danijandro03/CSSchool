@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Coreschool.Entities;
 using SchoolType;
 using static System.Console;
@@ -32,27 +33,55 @@ namespace Etapa1
                 new Course(){Name = "ThirdCourse"}
             };
 
-            //crear arreglo invocando atributo de School
+            //Creo variable de lista, va a traajar con Course ya definido
 
-            School.Courses = new Course[]{
+            School.Courses = new List<Course>(){
+                new Course(){Name = "101",CourseTime = SchedulesType.mañana},
+                new Course(){Name = "201",CourseTime = SchedulesType.mañana},      
+                new Course(){Name = "301",CourseTime = SchedulesType.mañana}
+            };
+            //Agrego cursos a la lista(Objeto que se deja enumerar)
+            School.Courses.Add( new Course(){Name ="102", CourseTime = SchedulesType.tarde});
+            School.Courses.Add( new Course(){Name ="202", CourseTime = SchedulesType.tarde});
+            //
+            
+            var otCollect = new List<Course>(){
+                new Course(){Name = "401",CourseTime = SchedulesType.mañana},
+                new Course(){Name = "501",CourseTime = SchedulesType.mañana},      
+                new Course(){Name = "502",CourseTime = SchedulesType.tarde}
+            };
+
+            //Vaciar list
+            /* otCollect.Clear();  */
+
+
+            //a la colección de cursos school.course agrego los cursos de la variable otcollect
+            School.Courses.AddRange(otCollect);
+
+            
+
+            //crear arreglo invocando atributo de School, Asigno lista a asignación de datos en declaración de Courses dentro de School
+        
+
+/*             School.Courses = new Course[]{
                 new Course(){Name = "FirstCourse"},
                 new Course(){Name = "SecondCourse"},      
                 new Course(){Name = "ThirdCourse"}
-            };
-            School = null;
+            }; */
+            //School = null;
             printCourseSchool(School);
 
         
             //Imprimir en consola:
-            Console.WriteLine(School);
-            System.Console.WriteLine("==============================");
+   /*          Console.WriteLine(School);
+/*             System.Console.WriteLine("==============================");
             PrintCourseWhile(arCourse);
             System.Console.WriteLine("==============================");
             PrintCourseDoWhile(arCourse);
             System.Console.WriteLine("==============================");
             PrintCourseFor(arCourse);
             System.Console.WriteLine("==============================");
-            PrintCourseForEach(arCourse);
+            PrintCourseForEach(arCourse); */
             // {
             //     
             //     //declaro objeto con segundo constructor
@@ -80,7 +109,7 @@ namespace Etapa1
             }
             
         }
-        private static void PrintCourseWhile(Course[] arCourse)
+        /* private static void PrintCourseWhile(Course[] arCourse)
         {
             int count = 0;
             while (count < arCourse.Length)
@@ -113,6 +142,6 @@ namespace Etapa1
             {
                 Console.WriteLine($"Nombre {Course.Name}, id {Course.ID}");
             }
-        }
-    }
+        }*/
+    } 
 }

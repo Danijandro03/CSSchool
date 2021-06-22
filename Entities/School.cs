@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using SchoolType;
 
 namespace Coreschool.Entities
@@ -46,7 +47,7 @@ namespace Coreschool.Entities
             return $"Name: \"{Name}\", Type: {SchoolType} {System.Environment.NewLine}, Country: {Country}, City: {City}";
         }
 
-        public Course[] Courses {get; set;}
+        public List<Course> Courses {get; set;}
     }
 
 
