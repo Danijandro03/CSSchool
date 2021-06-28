@@ -32,6 +32,7 @@ namespace Coreschool.Entities
         //Year = intoyear;
         //}
         public School(string name, int year, SchedulesType type) => (Name, Year) = (name, year);
+
         public School(string name, int year, SchedulesType type, string country = "", string city = "")
         {
             //asignación de tuplas

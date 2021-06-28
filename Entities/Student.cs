@@ -1,3 +1,5 @@
+using System;
+
 namespace Etapa1.Entities
 {
     public class student
