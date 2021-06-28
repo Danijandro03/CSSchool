@@ -121,7 +121,7 @@ namespace Etapa1
 
                 foreach (var Course in school.Courses)
                 {
-                    Console.WriteLine($"Nombre {Course.Name}, id {Course.ID}");
+                    Console.WriteLine($"Nombre {Course.Name}, id {Course.Id}");
                 }
 
             }

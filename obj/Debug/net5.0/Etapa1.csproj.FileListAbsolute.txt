@@ -14,3 +14,4 @@ C:\Users\Lenovo\Documents\Platzi\FundamentosCsharp\Etapa1\obj\Debug\net5.0\Etapa
 C:\Users\Lenovo\Documents\Platzi\FundamentosCsharp\Etapa1\obj\Debug\net5.0\ref\Etapa1.dll
 C:\Users\Lenovo\Documents\Platzi\FundamentosCsharp\Etapa1\obj\Debug\net5.0\Etapa1.pdb
 C:\Users\Lenovo\Documents\Platzi\FundamentosCsharp\Etapa1\obj\Debug\net5.0\Etapa1.genruntimeconfig.cache
+C:\Users\Lenovo\Documents\Platzi\FundamentosCsharp\Etapa1\obj\Debug\net5.0\Etapa1.csproj.AssemblyReference.cache
