@@ -21,11 +21,10 @@ namespace Coreschool
                                         country: "colombia", city: "Bogota");
             CourseLoad();
             AsigLoad();
-            foreach (var Course in School.Courses)
+/*             foreach (var Course in School.Courses)
             {
-                Course.Students.AddRange(
-                    StudentLoad());
-            }
+                Course.Students.AddRange(StudentCreate(2));
+            } */
             EvaluationLoad();
         }
 
@@ -35,7 +34,7 @@ namespace Coreschool
             throw new NotImplementedException();
         }
 
-        private IEnumerable<Student> StudentLoad()
+        private List<Student> StudentCreate(int stu)
         {
             string[] name = { "Alba", "Felipa", "Eusebio", "Farid", "Donald", "Alvaro", "Nicolás" };
             string[] lastname = { "Ruiz", "Sarmiento", "Uribe", "Maduro", "Trump", "Toledo", "Herrera" };
@@ -45,7 +44,8 @@ namespace Coreschool
                               from n2 in lastname
                               from n3 in name2
                               select new Student { Name=$"{n1} {n3} {n2}"}; 
-            return StudentList;
+
+            return StudentList.OrderBy((al)=>al.UniqueId).Take(stu).ToList();
         }
 
         private void AsigLoad()
@@ -60,7 +60,8 @@ namespace Coreschool
                     new Asignature{Name = "Scince"}
 
                 };
-                Course.Asignature.AddRange(ListAsignatures);
+                Course.Asignature = ListAsignatures;
+                
             }
         }
 
@@ -68,13 +69,21 @@ namespace Coreschool
         {
             School.Courses = new List<Course>()
             {
-                        new Course() { Name = "101", CourseTime = SchedulesType.tarde },
-                        new Course() { Name = "201", CourseTime = SchedulesType.tarde },
+                        new Course() { Name = "101", CourseTime = SchedulesType.mañana },
+                        new Course() { Name = "201", CourseTime = SchedulesType.noche },
                         new Course() { Name = "301", CourseTime = SchedulesType.tarde },
-                        new Course() { Name = "401", CourseTime = SchedulesType.tarde },
-                        new Course() { Name = "501", CourseTime = SchedulesType.tarde }
+                        new Course() { Name = "401", CourseTime = SchedulesType.mañana },
+                        new Course() { Name = "501", CourseTime = SchedulesType.noche}
             };
 
+            Random rnd = new Random();
+            foreach(var Course in School.Courses)
+            {
+                int cantRandom = rnd.Next(5, 20);
+                Course.Students = StudentCreate(cantRandom);
+            }
+
+            
         }
     }
 

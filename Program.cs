@@ -16,10 +16,6 @@ namespace Etapa1
             Printer.WriteTitle("Bienvenido a la Escuela");
             Printer.Beep(10000, count: 2);
             PrintCourseSchool (engine.School);
-
-            
-            
-
         }
 
         private static void PrintCourseSchool(School school)
