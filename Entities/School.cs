@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using SchoolType;
 
 namespace Coreschool.Entities
 {
@@ -33,6 +32,8 @@ namespace Coreschool.Entities
         //}
         public School(string name, int year, SchedulesType type) => (Name, Year) = (name, year);
 
+        
+
         public School(string name, int year, SchedulesType type, string country = "", string city = "")
         {
             //asignación de tuplas
@@ -41,19 +42,23 @@ namespace Coreschool.Entities
             this.City = city;
         }
 
+        public School()
+        {
+        }
+
         //asigna country y ciudad vacio, lo que no hace necesario que se le ingrese al llamar al metodo
         //Se llama firma a el valor que devuelve, valor que recibe y nombre
-/*  */
+        /*  */
 
         //Llevar infromación de objeto cuando se declare en  Console.WriteLine
-/*         public override string ToString()
-        {
-            // Se agrega \ para ingresar comilla
-            // System.Environment.NewLine: Salto de linea en todos los sistemas operativos
-            return $"Name: \"{Name}\", Type: {SchoolType} {System.Environment.NewLine}, Country: {Country}, City: {City}";
-        } */
+        /*         public override string ToString()
+                {
+                    // Se agrega \ para ingresar comilla
+                    // System.Environment.NewLine: Salto de linea en todos los sistemas operativos
+                    return $"Name: \"{Name}\", Type: {SchoolType} {System.Environment.NewLine}, Country: {Country}, City: {City}";
+                } */
 
-        
+
     }
 
 

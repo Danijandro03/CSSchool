@@ -1,4 +1,4 @@
-namespace SchoolType
+namespace Coreschool.Entities
 {
     public enum SchoolTypes {
         Primaria = 0,

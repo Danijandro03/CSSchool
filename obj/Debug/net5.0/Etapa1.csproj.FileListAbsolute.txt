@@ -5,7 +5,6 @@ C:\Users\Lenovo\Documents\Platzi\FundamentosCsharp\Etapa1\bin\Debug\net5.0\Etapa
 C:\Users\Lenovo\Documents\Platzi\FundamentosCsharp\Etapa1\bin\Debug\net5.0\Etapa1.dll
 C:\Users\Lenovo\Documents\Platzi\FundamentosCsharp\Etapa1\bin\Debug\net5.0\ref\Etapa1.dll
 C:\Users\Lenovo\Documents\Platzi\FundamentosCsharp\Etapa1\bin\Debug\net5.0\Etapa1.pdb
-C:\Users\Lenovo\Documents\Platzi\FundamentosCsharp\Etapa1\obj\Debug\net5.0\Etapa1.csprojAssemblyReference.cache
 C:\Users\Lenovo\Documents\Platzi\FundamentosCsharp\Etapa1\obj\Debug\net5.0\Etapa1.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Lenovo\Documents\Platzi\FundamentosCsharp\Etapa1\obj\Debug\net5.0\Etapa1.AssemblyInfoInputs.cache
 C:\Users\Lenovo\Documents\Platzi\FundamentosCsharp\Etapa1\obj\Debug\net5.0\Etapa1.AssemblyInfo.cs

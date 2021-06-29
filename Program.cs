@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using Coreschool;
 using Coreschool.Entities;
-using SchoolType;
-using static System.Console;
 
 namespace Etapa1
 {
@@ -10,7 +9,7 @@ namespace Etapa1
     {
         static void Main(string[] args)
         {
-            var SchoolProgram = new School("San Bartolome", 1604, SchedulesType.mañana);
+            var engine = new EngineSchool();
 
             //declarar arreglo del tipo Course con 3 posiciones y asignando de una vez valores
             var arCourse = new Course[3]
@@ -66,7 +65,7 @@ namespace Etapa1
 
                 foreach (var Course in SchoolProgram.Courses)
                 {
-                    Console.WriteLine($"Nombre {Course.Name}, id {Course.CourseTime}");
+                    Console.WriteLine($"Nombre {Course.Name}, Horario {Course.CourseTime}");
                 }
 
             }
