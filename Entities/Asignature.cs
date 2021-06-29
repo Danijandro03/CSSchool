@@ -9,7 +9,8 @@ namespace Coreschool.Entities
         public string Name { get; set; }
 
         public List<Evaluation> evaluations { get; set;}
-        
+        public double Note { get; internal set; }
+
         public Asignature() => UniqueId = Guid.NewGuid().ToString();
     }
     
