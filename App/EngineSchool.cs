@@ -35,8 +35,6 @@ namespace Coreschool
                         new Course() { Name = "401", CourseTime = SchedulesType.mañana },
                         new Course() { Name = "501", CourseTime = SchedulesType.noche}
             };
-
-
             
         }
         private void AsignatureLoad()
